@@ -2,7 +2,7 @@ package com.bcafinance.omdb.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Response(
+data class OMDBResponse(
 
 	@field:SerializedName("Response")
 	val response: String? = null,
