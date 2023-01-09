@@ -1,12 +1,20 @@
 package com.bcafinance.omdb.service
 
-import android.telecom.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 import com.bcafinance.omdb.model.OMDBResponse
+import retrofit2.Call
+import retrofit2.http.Path
 
 interface OMDBApiInterface {
-    @GET("?apikey=80641bfb")
+
+    //http://www.omdbapi.com/?apikey=e7150c4e&s=Avatar
+
+    @GET("?apikey=e7150c4e")
     fun getMovie(@Query("s") query: String):
-            retrofit2.Call<OMDBResponse>
+            Call<OMDBResponse>
+
+    @GET("?apikey=e7150c4e&s={title}")
+    fun getMovie2(@Path("title") query: String):
+            Call<OMDBResponse>
 }

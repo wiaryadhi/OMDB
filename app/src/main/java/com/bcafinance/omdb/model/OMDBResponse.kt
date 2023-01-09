@@ -1,7 +1,10 @@
 package com.bcafinance.omdb.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class OMDBResponse(
 
 	@field:SerializedName("Response")
@@ -12,8 +15,9 @@ data class OMDBResponse(
 
 	@field:SerializedName("Search")
 	val search: List<SearchItem?>? = null
-)
+) : Parcelable
 
+@Parcelize
 data class SearchItem(
 
 	@field:SerializedName("Type")
@@ -30,4 +34,4 @@ data class SearchItem(
 
 	@field:SerializedName("Title")
 	val title: String? = null
-)
+) : Parcelable

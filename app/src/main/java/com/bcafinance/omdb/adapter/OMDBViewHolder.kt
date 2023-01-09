@@ -12,13 +12,16 @@ class OMDBViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val director = view.txtDirector
     val rating = view.txtRating
     val image = view.photo
-    val favourite = view.btnFavourite
+    val imdb = view.txtImdb
+//    val favourite = view.btnFavourite
 
     fun bindData(adapter: OMDBAdapter, position: Int) {
 
         movieName.setText(adapter.data.get(position)?.title)
         director.setText(adapter.data.get(position)?.year)
         rating.setText(adapter.data.get(position)?.type)
+        imdb.setText(adapter.data.get(position)?.imdbID)
+
 
         image?.let {
             Glide.with(adapter.parent.context)
